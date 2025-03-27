@@ -16,9 +16,27 @@ Then edit the `hosts` file located at `C:\Windows\System32\drivers\etc\hosts` an
 127.0.0.1  dashboard.local
 ```
 
+Create an account, bind the Service Account to the Cluster Role, get the Access Token:
+
+```sh
+kubectl create serviceaccount admin-user -n kubernetes-dashboard
+kubectl create clusterrolebinding admin-user-binding --clusterrole=cluster-admin --serviceaccount=kubernetes-dashboard:admin-user
+kubectl -n kubernetes-dashboard create token admin-user
+
+```
+
 Now you can access the dashboard using the [Dashboard](https://dashboard.local) URL in your browser or via `curl`:
 
 ```bash
 curl -k https://dashboard.local
 
 ```
+
+Alternatively you can use `kubectl proxy`:
+
+```sh
+kubectl proxy
+
+```
+
+Then just visit this [link](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/).
