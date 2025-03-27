@@ -16,7 +16,9 @@ Then edit the `hosts` file located at `C:\Windows\System32\drivers\etc\hosts` an
 127.0.0.1  dashboard.local
 ```
 
-Create an account, bind the Service Account to the Cluster Role, get the Access Token:
+Restart your PC to ensure the changes to the `hosts` file take effect. After restarting, it may take a few minutes for the Kubernetes Dashboard to become accessible.
+
+Create an account, bind the Service Account to the Cluster Role, and get the Access Token:
 
 ```sh
 kubectl create serviceaccount admin-user -n kubernetes-dashboard
@@ -32,7 +34,7 @@ curl -k https://dashboard.local
 
 ```
 
-Alternatively you can use `kubectl proxy`:
+Alternatively, you can use `kubectl proxy`:
 
 ```sh
 kubectl proxy
