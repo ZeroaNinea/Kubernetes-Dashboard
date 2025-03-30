@@ -13,7 +13,7 @@ kubectl apply -f dashboard-ingress.yaml
 Then edit the `hosts` file located at `C:\Windows\System32\drivers\etc\hosts` and add the following line:
 
 ```plaintext
-127.0.0.1  dashboard.local
+127.0.0.1 dashboard.local
 ```
 
 If you are using Linux type this command:
