@@ -5,7 +5,7 @@ metadata:
   namespace: kubernetes-dashboard
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    nginx.ingress.kubernetes.io/enable-admission-webhook: "false"
+    # nginx.ingress.kubernetes.io/enable-admission-webhook: "false"
 spec:
   ingressClassName: nginx
   rules:
