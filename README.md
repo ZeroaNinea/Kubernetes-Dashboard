@@ -16,6 +16,19 @@ Then edit the `hosts` file located at `C:\Windows\System32\drivers\etc\hosts` an
 127.0.0.1  dashboard.local
 ```
 
+If you are using Linux type this command:
+
+```bash
+sudo nano /etc/hosts
+
+```
+
+Now add this line to the `hosts` file.
+
+```plaintext
+127.0.0.1 dashboard.local
+```
+
 Restart your PC to ensure the changes to the `hosts` file take effect. After restarting, it may take a few minutes for the Kubernetes Dashboard to become accessible.
 
 Create an account, bind the Service Account to the Cluster Role, and get the Access Token:
