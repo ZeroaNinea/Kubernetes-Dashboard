@@ -2,15 +2,11 @@
 
 This repository provides instructions to deploy the Kubernetes Dashboard. Follow the steps below to set up and access the dashboard.
 
----
-
 ## Prerequisites
 
 - A Kubernetes cluster (e.g., Minikube).
 - `kubectl` CLI installed and configured.
 - Basic knowledge of Kubernetes.
-
----
 
 ## Step 1: Enable Ingress (Minikube Only)
 
@@ -23,8 +19,6 @@ minikube start
 
 ```
 
----
-
 ## Step 2: Deploy Kubernetes Dashboard and Ingress Controller
 
 Run the following commands to deploy the Kubernetes Dashboard, the ingress controller and `.yaml` files:
@@ -36,8 +30,6 @@ kubectl apply -f dashboard-service.yaml
 kubectl apply -f dashboard-ingress.yaml
 
 ```
-
----
 
 ## Step 3: Configure Hostname Resolution
 
@@ -63,8 +55,6 @@ kubectl apply -f dashboard-ingress.yaml
 
 Restart your PC to apply the changes.
 
----
-
 ## Step 4: Create Service Account and Access Token
 
 Run the following commands to create an admin service account, bind it to the cluster role, and retrieve the access token:
@@ -75,8 +65,6 @@ kubectl create clusterrolebinding admin-user-binding --clusterrole=cluster-admin
 kubectl -n kubernetes-dashboard create token admin-user
 
 ```
-
----
 
 ## Step 5: Access the Dashboard
 
@@ -97,8 +85,6 @@ kubectl proxy
 ```
 Then visit:
 - [http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/)
-
----
 
 ## Notes
 
