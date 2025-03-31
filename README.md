@@ -1,6 +1,6 @@
 # Kubernetes Dashboard
 
-Enable ingress.
+Enable ingress if you're using Minikube.
 
 ```bash
 minikube addons enable ingress
