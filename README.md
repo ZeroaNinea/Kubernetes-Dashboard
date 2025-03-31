@@ -1,5 +1,14 @@
 # Kubernetes Dashboard
 
+Enable ingress.
+
+```bash
+minikube addons enable ingress
+minikube stop
+minikube start
+
+```
+
 To access this dashboard, use the following commands:
 
 ```bash
